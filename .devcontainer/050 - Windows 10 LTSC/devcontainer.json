@@ -1,10 +1,12 @@
 {
   "name": "Windows 10 LTSC",
-  "service": "windows",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "containerEnv": {
     "VERSION": "10l"
   },
-  "forwardPorts": [8006],  
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [8006],
   "portsAttributes": {
     "8006": {
       "label": "Web",
@@ -13,7 +15,5 @@
   },
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
-  }, 
-  "dockerComposeFile": "../codespaces.yml",
-  "initializeCommand": "docker system prune --all --force"
+  }
 }
