@@ -1,9 +1,11 @@
 {
   "name": "Windows 11 Pro",
-  "service": "windows",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "containerEnv": {
     "VERSION": "11"
   },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "forwardPorts": [8006],
   "portsAttributes": {
     "8006": {
@@ -13,7 +15,5 @@
   },
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
-  },
-  "dockerComposeFile": "codespaces.yml",
-  "initializeCommand": "docker system prune --all --force"
+  }
 }
